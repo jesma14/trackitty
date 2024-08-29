@@ -53,3 +53,8 @@ jobs:
                 echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
                 echo "storeFile=keystore.jks" >> android/key.properties
               working-directory: ../trackitty/trackitty_app
+
+            #6 Build App Bundle
+            - name: Build App Bundle
+              run: flutter build appbundle
+              working-directory: ../trackitty/trackitty_app
