@@ -76,5 +76,6 @@ jobs:
                 -configuration Release \
                 clean archive \
                 -archivePath ${{ github.workspace }}/build/ios/Runner.xcarchive archive
+                -destination "generic/platform=iOS"
               working-directory: ../trackitty/trackitty_app
             
