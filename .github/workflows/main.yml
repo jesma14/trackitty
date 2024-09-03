@@ -74,6 +74,7 @@ jobs:
                 -scheme Runner \
                 -sdk iphoneos \
                 -configuration Release \
+                clean archive \
                 -archivePath ${{ github.workspace }}/build/ios/Runner.xcarchive archive
               working-directory: ../trackitty/trackitty_app
             
