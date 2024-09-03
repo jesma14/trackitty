@@ -65,3 +65,13 @@ jobs:
               if: matrix.os == 'macos-latest'
               run: flutter build ios --release --no-codesign
               working-directory: ../trackitty/trackitty_app
+
+            #8 Archive iOS App (MacOS) -> create Xcode archive, bundle with all neccesary metadata
+            - name: Archive iOS App
+              if: matrix.os == 'macos-latest'
+              run: |
+                xcodebuild -workspace ios/Runner.xcworkspace \
+                scheme Runner \
+                configuration Release \
+                archivePath ${{ github.workspace }}/build/ios/Runner.xcarchive archive
+            
